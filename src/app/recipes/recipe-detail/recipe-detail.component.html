@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-responsive"
+      style="max-height: 100px;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{ recipe.name }}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      {{ recipe.description }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient.name }} - {{ ingredient.amount }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-6">
+      <ul class="navbar-nav mr-auto">
+
+        <li><a style="cursor: pointer;" (click)="onEditRecipe()">Edit Map</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteRecipe()">Delete Map</a></li>
+      </ul>
+    </div>
+    <hr>
+    <div class="col-xs-6">
+      <ul class="navbar-nav mr-auto">
+        <li><a (click)="onLoadPins()" style="cursor: pointer;">LoadPins</a></li>
+        <li><a style="cursor: pointer;" (click)="onEditRecipe()">Replace on map Dynamycally</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteRecipe()">Zoom To</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteRecipe()">Auto Zoom to show all pins</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>
+<div class="flex">
+  <app-map class="mapView"></app-map>
+</div>

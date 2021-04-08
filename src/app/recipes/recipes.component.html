@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          <app-recipe-list></app-recipe-list>
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="align-items-center">
+      <router-outlet></router-outlet>
+    </div>
+
+  </main>
+
+</div>
